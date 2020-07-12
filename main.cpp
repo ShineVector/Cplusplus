@@ -5,52 +5,43 @@ using namespace std;
 
 int main() {
 
-int Cents;
+int cents = 0;
 cout << "Enter an amount in cents : "; 
- cin >> Cents;
+ cin >> cents;
 
 
  
   
 
-int dollar = 100;
-int quarter = 25;
-int dime = 10;
-int nickel = 5;
-int penny = 1;
-  
-int dollars_result;
-dollars_result = (Cents / dollar);
-cout <<"dollars  : "<<dollars_result<< endl;
+const int dollar_value = 100;
+const int quarter_value = 25;
+const int dime_value = 10;
+const int nickel_value = 5;
+const int penny_value = 1;
+int balance{}, dollars{}, quarters{}, dimes{}, nickels{}, pennies{};
 
-int dollars_remainder;
-dollars_remainder = (Cents % dollar);
+dollars = (cents / dollar_value);
+cout <<"dollars  : "<<dollars<< endl;
+balance = (cents % dollar_value);
 
 
 
-int qua_result;
-qua_result = (dollars_remainder / quarter);
-cout <<"quarters : "<<qua_result<< endl;
-
-int qua_remainder;
-qua_remainder = (dollars_remainder % quarter);
-
-int dime_result;
-dime_result = (qua_remainder / dime);
-cout <<"dimes    : " <<dime_result<< endl;
-int dime_remainder;
-dime_remainder = (qua_remainder % dime);
+quarters = (balance / quarter_value);
+cout <<"quarters : "<<quarters<< endl;
+balance = (balance % quarter_value);
 
 
-int nickels_result;
-nickels_result = (dime_remainder / nickel);
-cout <<"nukels   : "<<nickels_result<< endl;
-int nickels_remainder;
-nickels_remainder = (dime_remainder % nickel);
+dimes = (balance / dime_value);
+cout <<"dimes    : " <<dimes<< endl;
+balance = (balance % dime_value);
 
-int penny_result;
-penny_result = (nickels_remainder / penny);
-cout <<"pennies  : " <<penny_result<< endl;
+
+nickels = (balance / nickel_value);
+cout <<"nukels   : "<<nickels<< endl;
+balance = (balance % nickel_value);
+
+pennies = (balance / penny_value);
+cout <<"pennies  : " <<pennies<< endl;
 
 
 
